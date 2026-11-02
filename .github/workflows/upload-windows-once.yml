@@ -33,6 +33,7 @@ jobs:
           asset = next((a for a in assets if a['name'] == name), None)
           if asset is None:
               asset = call(release['upload_url'].split('{')[0] + '?name=' + name, 'POST', binary)
+          print('Asset:', json.dumps({k: asset.get(k) for k in ['id','name','size','state','digest','browser_download_url']}), flush=True)
           assert asset['size'] == len(binary) and asset['digest'] == 'sha256:' + expected
           print('Windows installer attached and verified')
           PY
