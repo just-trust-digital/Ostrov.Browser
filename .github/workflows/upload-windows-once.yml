@@ -26,6 +26,7 @@ jobs:
           name = 'Ostrov-Setup-0.7.21.exe'
           with urllib.request.urlopen(shard + '/1bLS/A3TBjFeHQ/Win/' + name, timeout=120) as response:
               binary = response.read(101558921)
+          print('Downloaded bytes:', len(binary), 'SHA256:', hashlib.sha256(binary).hexdigest(), flush=True)
           expected = '80a562d9ebd230614e715e0f8ad76d4a90249190e91aed8eff29837abf67f576'
           assert len(binary) == 101558920 and hashlib.sha256(binary).hexdigest() == expected
           assets = call(api + '/releases/' + str(release['id']) + '/assets')
