@@ -1,0 +1,37 @@
+name: Upload verified Windows installer once
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch, verify and attach installer to existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, urllib.request
+          api = 'https://api.github.com/repos/just-trust-digital/Ostrov.Browser'
+          headers = {'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json'}
+          def call(url, method='GET', data=None):
+              req = urllib.request.Request(url, data=data, headers={**headers, 'Content-Type': 'application/octet-stream'}, method=method)
+              with urllib.request.urlopen(req, timeout=120) as response:
+                  return json.load(response)
+          release = call(api + '/releases/tags/v0.7.21')
+          dispatcher = json.load(urllib.request.urlopen('https://cloud.mail.ru/api/v2/dispatcher', timeout=30))
+          shard = dispatcher['body']['weblink_get'][0]['url']
+          name = 'Ostrov-Setup-0.7.21.exe'
+          with urllib.request.urlopen(shard + '/1bLS/A3TBjFeHQ/Win/' + name, timeout=120) as response:
+              binary = response.read(101558921)
+          expected = '80a562d9ebd230614e715e0f8ad76d4a90249190e91aed8eff29837abf67f576'
+          assert len(binary) == 101558920 and hashlib.sha256(binary).hexdigest() == expected
+          assets = call(api + '/releases/' + str(release['id']) + '/assets')
+          asset = next((a for a in assets if a['name'] == name), None)
+          if asset is None:
+              asset = call(release['upload_url'].split('{')[0] + '?name=' + name, 'POST', binary)
+          assert asset['size'] == len(binary) and asset['digest'] == 'sha256:' + expected
+          print('Windows installer attached and verified')
+          PY
