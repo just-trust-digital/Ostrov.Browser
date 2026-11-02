@@ -6,7 +6,7 @@
 
 | Устройство | Версия | Скачать |
 |---|---|---|
-| Windows 10/11, x64 | 0.7.21 | [Установщик Windows](https://github.com/just-trust-digital/Ostrov.Browser/releases/download/v0.7.21/Ostrov-Setup-0.7.21.exe) |
+| Windows 10/11, x64 | 0.7.21 | [Скачать из Облака Mail.ru](https://cloud.mail.ru/public/1bLS/A3TBjFeHQ/Win) · [Что изменилось](https://github.com/just-trust-digital/Ostrov.Browser/releases/tag/v0.7.21) |
 | Android 8.0 и новее | 0.8.0-dev3 | [APK Android](https://github.com/just-trust-digital/Ostrov.Browser/releases/download/android-v0.8.0-dev3/Ostrov-Android-0.8.0-dev3-pilot.apk) |
 
 Это предварительные версии. Возможны ошибки; проверку приватности Android ещё не завершили. Версии двух платформ развиваются независимо.
