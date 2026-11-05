@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/boatswain-calm.png" alt="Боцман" width="180"></p>
+<p align="center"><img src="assets/boatswain-transparent.png" alt="Боцман" width="180"></p>
 
 # Остров
 
