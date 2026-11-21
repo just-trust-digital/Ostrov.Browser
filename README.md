@@ -10,15 +10,15 @@
 
 <!-- downloads:start -->
 <p>
-<a href="https://github.com/just-trust-digital/Ostrov.Browser/releases/download/v0.7.25/Ostrov-Setup-0.7.25.exe"><img src="assets/download-windows.svg" alt="Скачать для Windows" width="280" height="80"></a>
-<a href="https://github.com/just-trust-digital/Ostrov.Browser/releases/download/android-v0.8.0-dev3/Ostrov-Android-0.8.0-dev3-pilot.apk"><img src="assets/download-android.svg" alt="Скачать для Android" width="280" height="80"></a>
+<a href="https://github.com/just-trust-digital/Ostrov.Browser/releases/download/v0.7.28/Ostrov-Setup-0.7.28.exe"><img src="assets/download-windows.svg" alt="Скачать для Windows" width="280" height="80"></a>
+<a href="https://github.com/just-trust-digital/Ostrov.Browser/releases/download/android-v0.8.0-dev10/Ostrov-Android-0.8.0-dev10-pilot.apk"><img src="assets/download-android.svg" alt="Скачать для Android" width="280" height="80"></a>
 </p>
 <!-- downloads:end -->
 
 | Устройство | Версия | Изменения |
 |---|---|---|
-| Windows 10/11, x64 | 0.7.25 | [Что изменилось](https://github.com/just-trust-digital/Ostrov.Browser/releases/tag/v0.7.25) |
-| Android 8.0 и новее | 0.8.0-dev3 | [Что изменилось](https://github.com/just-trust-digital/Ostrov.Browser/releases/tag/android-v0.8.0-dev3) |
+| Windows 10/11, x64 | 0.7.28 | [Что изменилось](https://github.com/just-trust-digital/Ostrov.Browser/releases/tag/v0.7.28) |
+| Android 8.0 и новее | 0.8.0-dev10 | [Что изменилось](https://github.com/just-trust-digital/Ostrov.Browser/releases/tag/android-v0.8.0-dev10) |
 
 Это предварительные версии. Возможны ошибки; проверку приватности Android ещё не завершили. Версии двух платформ развиваются независимо.
 
@@ -39,7 +39,7 @@
 
 ### Android
 
-Скачайте APK и разрешите установку из выбранного источника. Обновите Android System WebView. Пакет подписан тестовым ключом, поддерживает сертификаты НУЦ. Это экспериментальная версия; совместимость с отдельными сайтами требует проверки. Камера и микрофон, расширения, прокси и автозаполнение паролей пока недоступны.
+Скачайте APK и разрешите установку из выбранного источника. Обновите Android System WebView. Пакет подписан тестовым ключом, поддерживает сертификаты НУЦ. Это экспериментальная версия; совместимость с отдельными сайтами требует проверки. Камера и микрофон работают с запросом разрешения; расширения, прокси и автозаполнение паролей пока недоступны.
 
 [История всех версий](CHANGELOG.md).
 
